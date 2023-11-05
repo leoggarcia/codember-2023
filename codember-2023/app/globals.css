@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--foreground-rgb: 0, 0, 0;
+	--background-start-rgb: 214, 219, 220;
+	--background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--foreground-rgb: 255, 255, 255;
+		--background-start-rgb: 0, 0, 0;
+		--background-end-rgb: 0, 0, 0;
+	}
+}
+
+body {
+	color: rgb(var(--foreground-rgb));
+	/* background: linear-gradient(
+			to bottom,
+			transparent,
+			rgb(var(--background-end-rgb))
+		)
+		rgb(var(--background-start-rgb)); */
+    
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+	height: 100vh;
+	margin: 0;
+	--x: calc(var(--posX, 0) * 1px);
+	--y: calc(var(--posY, 0) * 1px);
+	background-image: linear-gradient(115deg, rgb(211 255 215), rgb(0 0 0)),
+		radial-gradient(
+			90% 100% at calc(50% + var(--x)) calc(0% + var(--y)),
+			rgb(200 200 200),
+			rgb(022 000 045)
+		),
+		radial-gradient(
+			100% 100% at calc(80% - var(--x)) calc(0% - var(--y)),
+			rgb(26, 255, 0),
+			rgb(036 000 000)
+		),
+		radial-gradient(
+			150% 210% at calc(100% + var(--x)) calc(0% + var(--y)),
+			rgb(020 175 125),
+			rgb(000 010 255)
+		),
+		radial-gradient(
+			100% 100% at calc(100% - var(--x)) calc(30% - var(--y)),
+			rgb(255 077 000),
+			rgb(000 200 255)
+		),
+		linear-gradient(60deg, rgb(255 000 000), rgb(120 086 255));
+	background-blend-mode: overlay, overlay, difference, difference, difference,
+		normal;
+}
+
+.interlaced {
+	background: repeating-linear-gradient(
+		transparent 0px 1px,
+		hsl(154 0% 0%/0.2) 3px 4px
+	);
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	pointer-events: none;
+}
+
+.glow {
+	text-shadow: 0 0 5px hsl(154, 84%, 70%);
+	animation-duration: 1s;
+	animation-name: textShadow;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
