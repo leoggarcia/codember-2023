@@ -71,7 +71,7 @@ function Solucion() {
 					<h3 className="text-yellow-300 font-mono text-lg">
 						** Texto desencriptado **
 					</h3>
-					<p className="text-green-500 text-base break-normal">
+					<p className="text-green-500 text-base break-all">
 						{textoDesencriptado?.map((palabra) => {
 							return palabra.palabra + palabra.contador + "";
 						})}
